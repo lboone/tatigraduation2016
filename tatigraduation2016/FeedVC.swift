@@ -16,9 +16,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var postField: MaterialTextField!
     @IBOutlet weak var imageSelectorImage: UIImageView!
     
-    var storyBoard: UIStoryboard!
-    var savingPostVC: SavingPostVC!
-    
     var posts = [Post]()
     
     var imagePicker: UIImagePickerController!
@@ -140,8 +137,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
      
         if let txt = postField.text where txt != "" {
             
-         self.performSegueWithIdentifier("SavingPost", sender: nil)
-            
             if let img = imageSelectorImage.image where imageChanged == true {
                 let urlStr = "https://post.imageshack.us/upload_api.php"
                 let url = NSURL(string: urlStr)!
@@ -182,8 +177,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             } else {
                 self.postToFirebase(nil)
             }
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
         } else {
             showErrorAlert("Message required!", msg: "Please provide a message before you post!")
         }
