@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124CD2791C970A6200665437 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD2781C970A6200665437 /* FeedVC.swift */; };
+		124CD27B1C970AF600665437 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD27A1C970AF600665437 /* PostCell.swift */; };
+		124CD27D1C9759DA00665437 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD27C1C9759DA00665437 /* Post.swift */; };
 		126C06861C93D741004DF044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C06851C93D741004DF044 /* AppDelegate.swift */; };
 		126C06881C93D741004DF044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C06871C93D741004DF044 /* ViewController.swift */; };
 		126C068B1C93D741004DF044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126C06891C93D741004DF044 /* Main.storyboard */; };
 		126C068D1C93D741004DF044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 126C068C1C93D741004DF044 /* Assets.xcassets */; };
 		126C06901C93D741004DF044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126C068E1C93D741004DF044 /* LaunchScreen.storyboard */; };
+		126C069F1C93D77D004DF044 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 126C069B1C93D77D004DF044 /* NotoSans-Bold.ttf */; };
+		126C06A01C93D77D004DF044 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 126C069C1C93D77D004DF044 /* NotoSans-BoldItalic.ttf */; };
+		126C06A11C93D77D004DF044 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 126C069D1C93D77D004DF044 /* NotoSans-Italic.ttf */; };
+		126C06A21C93D77D004DF044 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 126C069E1C93D77D004DF044 /* NotoSans-Regular.ttf */; };
+		128082611C93E40D00A5A36C /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128082601C93E40D00A5A36C /* MaterialView.swift */; };
+		128082641C93E46900A5A36C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128082631C93E46900A5A36C /* Constants.swift */; };
+		128082661C94BCEF00A5A36C /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128082651C94BCEF00A5A36C /* MaterialButton.swift */; };
+		128082681C94C1AD00A5A36C /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128082671C94C1AD00A5A36C /* MaterialTextField.swift */; };
+		1280826D1C94DBB100A5A36C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280826A1C94DBB100A5A36C /* Bolts.framework */; };
+		1280826E1C94DBB100A5A36C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280826B1C94DBB100A5A36C /* FBSDKCoreKit.framework */; };
+		1280826F1C94DBB100A5A36C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1280826C1C94DBB100A5A36C /* FBSDKLoginKit.framework */; };
+		128082721C94E81C00A5A36C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128082711C94E81C00A5A36C /* DataService.swift */; };
+		7D286C805C88AEAD6CAF8941 /* Pods_tatigraduation2016.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEB83B28DF3C05413FBD0AF /* Pods_tatigraduation2016.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124CD2781C970A6200665437 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		124CD27A1C970AF600665437 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		124CD27C1C9759DA00665437 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		126C06821C93D741004DF044 /* tatigraduation2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tatigraduation2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126C06851C93D741004DF044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		126C06871C93D741004DF044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,21 @@
 		126C068C1C93D741004DF044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		126C068F1C93D741004DF044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		126C06911C93D741004DF044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		126C069B1C93D77D004DF044 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		126C069C1C93D77D004DF044 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		126C069D1C93D77D004DF044 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		126C069E1C93D77D004DF044 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		128082601C93E40D00A5A36C /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		128082631C93E46900A5A36C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		128082651C94BCEF00A5A36C /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		128082671C94C1AD00A5A36C /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		1280826A1C94DBB100A5A36C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1280826B1C94DBB100A5A36C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1280826C1C94DBB100A5A36C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		128082711C94E81C00A5A36C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		6BA9A77FB13497B43381FEC4 /* Pods-tatigraduation2016.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tatigraduation2016.release.xcconfig"; path = "Pods/Target Support Files/Pods-tatigraduation2016/Pods-tatigraduation2016.release.xcconfig"; sourceTree = "<group>"; };
+		8CEB83B28DF3C05413FBD0AF /* Pods_tatigraduation2016.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tatigraduation2016.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1D81AA236C20B22419918E /* Pods-tatigraduation2016.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tatigraduation2016.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tatigraduation2016/Pods-tatigraduation2016.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1280826D1C94DBB100A5A36C /* Bolts.framework in Frameworks */,
+				1280826E1C94DBB100A5A36C /* FBSDKCoreKit.framework in Frameworks */,
+				1280826F1C94DBB100A5A36C /* FBSDKLoginKit.framework in Frameworks */,
+				7D286C805C88AEAD6CAF8941 /* Pods_tatigraduation2016.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +78,8 @@
 			children = (
 				126C06841C93D741004DF044 /* tatigraduation2016 */,
 				126C06831C93D741004DF044 /* Products */,
+				FEEF250F70E9BE9E1D611549 /* Pods */,
+				7CAAD1C15DDF85B596C109EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +94,102 @@
 		126C06841C93D741004DF044 /* tatigraduation2016 */ = {
 			isa = PBXGroup;
 			children = (
+				128082701C94E80B00A5A36C /* Services */,
+				128082691C94DB9E00A5A36C /* Frameworks */,
+				128082621C93E44700A5A36C /* Util */,
+				126C069A1C93D761004DF044 /* Resources */,
+				126C06991C93D75C004DF044 /* Model */,
+				126C06981C93D757004DF044 /* View */,
+				126C06971C93D74D004DF044 /* Controller */,
 				126C06851C93D741004DF044 /* AppDelegate.swift */,
-				126C06871C93D741004DF044 /* ViewController.swift */,
-				126C06891C93D741004DF044 /* Main.storyboard */,
 				126C068C1C93D741004DF044 /* Assets.xcassets */,
-				126C068E1C93D741004DF044 /* LaunchScreen.storyboard */,
 				126C06911C93D741004DF044 /* Info.plist */,
 			);
 			path = tatigraduation2016;
+			sourceTree = "<group>";
+		};
+		126C06971C93D74D004DF044 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				126C06871C93D741004DF044 /* ViewController.swift */,
+				124CD2781C970A6200665437 /* FeedVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		126C06981C93D757004DF044 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				126C06891C93D741004DF044 /* Main.storyboard */,
+				126C068E1C93D741004DF044 /* LaunchScreen.storyboard */,
+				128082601C93E40D00A5A36C /* MaterialView.swift */,
+				128082651C94BCEF00A5A36C /* MaterialButton.swift */,
+				128082671C94C1AD00A5A36C /* MaterialTextField.swift */,
+				124CD27A1C970AF600665437 /* PostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		126C06991C93D75C004DF044 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				124CD27C1C9759DA00665437 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		126C069A1C93D761004DF044 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				126C069B1C93D77D004DF044 /* NotoSans-Bold.ttf */,
+				126C069C1C93D77D004DF044 /* NotoSans-BoldItalic.ttf */,
+				126C069D1C93D77D004DF044 /* NotoSans-Italic.ttf */,
+				126C069E1C93D77D004DF044 /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		128082621C93E44700A5A36C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				128082631C93E46900A5A36C /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		128082691C94DB9E00A5A36C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1280826A1C94DBB100A5A36C /* Bolts.framework */,
+				1280826B1C94DBB100A5A36C /* FBSDKCoreKit.framework */,
+				1280826C1C94DBB100A5A36C /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		128082701C94E80B00A5A36C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				128082711C94E81C00A5A36C /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		7CAAD1C15DDF85B596C109EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB83B28DF3C05413FBD0AF /* Pods_tatigraduation2016.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEEF250F70E9BE9E1D611549 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB1D81AA236C20B22419918E /* Pods-tatigraduation2016.debug.xcconfig */,
+				6BA9A77FB13497B43381FEC4 /* Pods-tatigraduation2016.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 126C06941C93D741004DF044 /* Build configuration list for PBXNativeTarget "tatigraduation2016" */;
 			buildPhases = (
+				2A43CEC29D40C2FF43B1C0EF /* Check Pods Manifest.lock */,
 				126C067E1C93D741004DF044 /* Sources */,
 				126C067F1C93D741004DF044 /* Frameworks */,
 				126C06801C93D741004DF044 /* Resources */,
+				CB3170C53F92E1DE1BE16E63 /* Embed Pods Frameworks */,
+				FB7A7DE5C6DD943AD567A6F3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,21 +254,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				126C069F1C93D77D004DF044 /* NotoSans-Bold.ttf in Resources */,
 				126C06901C93D741004DF044 /* LaunchScreen.storyboard in Resources */,
+				126C06A01C93D77D004DF044 /* NotoSans-BoldItalic.ttf in Resources */,
+				126C06A11C93D77D004DF044 /* NotoSans-Italic.ttf in Resources */,
 				126C068D1C93D741004DF044 /* Assets.xcassets in Resources */,
 				126C068B1C93D741004DF044 /* Main.storyboard in Resources */,
+				126C06A21C93D77D004DF044 /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A43CEC29D40C2FF43B1C0EF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB3170C53F92E1DE1BE16E63 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tatigraduation2016/Pods-tatigraduation2016-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7A7DE5C6DD943AD567A6F3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tatigraduation2016/Pods-tatigraduation2016-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		126C067E1C93D741004DF044 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128082681C94C1AD00A5A36C /* MaterialTextField.swift in Sources */,
+				128082721C94E81C00A5A36C /* DataService.swift in Sources */,
+				128082611C93E40D00A5A36C /* MaterialView.swift in Sources */,
 				126C06881C93D741004DF044 /* ViewController.swift in Sources */,
+				124CD2791C970A6200665437 /* FeedVC.swift in Sources */,
+				124CD27B1C970AF600665437 /* PostCell.swift in Sources */,
 				126C06861C93D741004DF044 /* AppDelegate.swift in Sources */,
+				128082641C93E46900A5A36C /* Constants.swift in Sources */,
+				128082661C94BCEF00A5A36C /* MaterialButton.swift in Sources */,
+				124CD27D1C9759DA00665437 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +439,13 @@
 		};
 		126C06951C93D741004DF044 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB1D81AA236C20B22419918E /* Pods-tatigraduation2016.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tatigraduation2016",
+				);
 				INFOPLIST_FILE = tatigraduation2016/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambapps.tatigraduation2016;
@@ -259,8 +455,13 @@
 		};
 		126C06961C93D741004DF044 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BA9A77FB13497B43381FEC4 /* Pods-tatigraduation2016.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tatigraduation2016",
+				);
 				INFOPLIST_FILE = tatigraduation2016/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambapps.tatigraduation2016;
@@ -287,6 +488,7 @@
 				126C06961C93D741004DF044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
