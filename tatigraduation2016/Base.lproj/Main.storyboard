@@ -14,6 +14,7 @@
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
             <string>NotoSans</string>
@@ -324,7 +325,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Avs-aj-Y0K" userLabel="mainStackView">
                                                             <rect key="frame" x="16" y="8" width="544" height="391"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-DO-Fjd" userLabel="topBarStackView">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-DO-Fjd" userLabel="topBarStackView">
                                                                     <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyProfileImg" translatesAutoresizingMaskIntoConstraints="NO" id="0Gd-9j-2tH">
@@ -342,13 +343,13 @@
                                                                                 </mask>
                                                                             </variation>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="yourbestfriend31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="2dp-iN-mh4">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yourbestfriend31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="2dp-iN-mh4">
                                                                             <rect key="frame" x="55" y="0.0" width="399" height="50"/>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                             <color key="textColor" red="0.4823529412" green="0.043137254899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mnE-MG-yS5" userLabel="likesStackView">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mnE-MG-yS5" userLabel="likesStackView">
                                                                             <rect key="frame" x="459" y="0.0" width="85" height="50"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="Fxd-tX-Hmq">
@@ -387,7 +388,7 @@
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-hE-FpA">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-hE-FpA">
                                                                     <rect key="frame" x="0.0" y="60" width="544" height="70"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ixS-DQ-bwq"/>
@@ -397,7 +398,7 @@
                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="yJq-Oe-t1p">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="yJq-Oe-t1p">
                                                                     <rect key="frame" x="0.0" y="140" width="544" height="251"/>
                                                                 </imageView>
                                                             </subviews>
@@ -462,6 +463,7 @@
                         <outlet property="imageSelectorImage" destination="XxY-Im-T92" id="6fA-zI-Odh"/>
                         <outlet property="postField" destination="9Td-ZE-j9Z" id="jRb-Vw-WDh"/>
                         <outlet property="tableView" destination="vFl-Kp-f7k" id="lpI-mk-k67"/>
+                        <segue destination="gVe-Nk-uZE" kind="presentation" identifier="SavingPost" id="D2c-QJ-mp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edY-Cs-D9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,7 +473,48 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1828" y="372"/>
+            <point key="canvasLocation" x="1832" y="372"/>
+        </scene>
+        <!--Saving PostVC-->
+        <scene sceneID="ol6-zM-9aA">
+            <objects>
+                <viewController id="gVe-Nk-uZE" customClass="SavingPostVC" customModule="tatigraduation2016" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sZR-xD-jf4"/>
+                        <viewControllerLayoutGuide type="bottom" id="6n0-iA-5QW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bVD-lv-LMz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-sY-ukL">
+                                <rect key="frame" x="0.0" y="40" width="600" height="560"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPLOADING POST..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EOz-2B-rrX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kwu-ef-o5L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bhd-sY-ukL" firstAttribute="top" secondItem="EOz-2B-rrX" secondAttribute="bottom" id="CKs-jn-pMk"/>
+                            <constraint firstAttribute="trailing" secondItem="EOz-2B-rrX" secondAttribute="trailing" id="Hjf-O5-gd6"/>
+                            <constraint firstItem="EOz-2B-rrX" firstAttribute="top" secondItem="bVD-lv-LMz" secondAttribute="top" id="R81-uE-Akg"/>
+                            <constraint firstAttribute="trailing" secondItem="bhd-sY-ukL" secondAttribute="trailing" id="VLU-De-mer"/>
+                            <constraint firstItem="bhd-sY-ukL" firstAttribute="leading" secondItem="bVD-lv-LMz" secondAttribute="leading" id="bmM-WC-Lgf"/>
+                            <constraint firstItem="6n0-iA-5QW" firstAttribute="top" secondItem="bhd-sY-ukL" secondAttribute="bottom" id="m89-Io-pmi"/>
+                            <constraint firstItem="EOz-2B-rrX" firstAttribute="leading" secondItem="bVD-lv-LMz" secondAttribute="leading" id="sm9-rY-I7B"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpS-xa-RBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707" y="392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cx4-sM-VcP">

@@ -6,4 +6,5 @@ use_frameworks!
 target 'tatigraduation2016' do
 pod 'Firebase', '>= 2.5.0'
 pod 'Alamofire', '~> 3.0'
+pod 'NVActivityIndicatorView'
 end

@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         if kID != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         } else {
-
+            print(NSUserDefaults.standardUserDefaults())
         }
     }
 
@@ -112,6 +112,8 @@ class ViewController: UIViewController {
         } else {
             showErrorAlert("Email and Password Required", msg: "You must provide a username and password.")
         }
+        
+        print(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID))
     }
     
     func showErrorAlert(title: String, msg: String){

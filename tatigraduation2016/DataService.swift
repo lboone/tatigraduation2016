@@ -33,4 +33,9 @@ class DataService {
     func createFirebaseUser(uid: String, user:Dictionary<String, String>){
         REF_USERS.childByAppendingPath(uid).setValue(user)
     }
+    
+    func createFirebasePost(post:Dictionary<String, AnyObject>) {
+        let firebasePost = self.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+    }
 }

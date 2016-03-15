@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -15,13 +16,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var postField: MaterialTextField!
     @IBOutlet weak var imageSelectorImage: UIImageView!
     
+    var storyBoard: UIStoryboard!
+    var savingPostVC: SavingPostVC!
     
     var posts = [Post]()
     
     var imagePicker: UIImagePickerController!
+    var imageChanged = false
     
     static var imageCache = NSCache()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("-------------------- OMG - RECEIVED MEMORY WARNING -----------------------")
+        FeedVC.imageCache.removeAllObjects()
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -113,6 +122,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             if imgType == "public.image" {
                 if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
                     imageSelectorImage.image = img
+                    imageChanged = true
                 }
             } else {
                 print("Not an image")
@@ -125,8 +135,75 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         presentViewController(imagePicker, animated: true, completion: nil)
         
     }
+    
     @IBAction func makePost(sender: MaterialButton) {
+     
+        if let txt = postField.text where txt != "" {
+            
+         self.performSegueWithIdentifier("SavingPost", sender: nil)
+            
+            if let img = imageSelectorImage.image where imageChanged == true {
+                let urlStr = "https://post.imageshack.us/upload_api.php"
+                let url = NSURL(string: urlStr)!
+                
+                //Put all informtion into data format
+                let imgData = UIImageJPEGRepresentation(img, 0.2)!
+                let keyData = KEY_IMAGE_SHACK.dataUsingEncoding(NSUTF8StringEncoding)!
+                let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+               
+                
+                
+                Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                    
+                    multipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    multipartFormData.appendBodyPart(data: keyData, name: "key")
+                    multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                    
+                }) { encodingResult in
+                    
+                    switch encodingResult {
+                        case .Success(let upload, _, _):
+
+                            upload.responseJSON(completionHandler: { result in
+                                if let info = result.result.value as? Dictionary<String, AnyObject> {
+                                    if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                        if let imgLink = links["image_link"] as? String {
+                                            print("LINK: \(imgLink)")
+                                            self.postToFirebase(imgLink)
+                                        }
+                                    }
+                                }
+                            })
+                        case .Failure(let error):
+                            self.showErrorAlert("Error!", msg: "\(error)")
+                    }
+                }
+                
+            } else {
+                self.postToFirebase(nil)
+            }
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            showErrorAlert("Message required!", msg: "Please provide a message before you post!")
+        }
         
+        
+    }
+    
+    func postToFirebase(imgUrl: String?){
+        var post: Dictionary<String, AnyObject> = [
+            "description": postField.text!,
+            "likes": 0
+        ]
+        if imgUrl != nil {
+            post["imageurl"] = imgUrl!
+        }
+        DataService.ds.createFirebasePost(post)
+        postField.text = ""
+        imageSelectorImage.image = UIImage(named: "camera")
+        imageChanged = false
+        tableView.reloadData()
     }
 
     func showErrorAlert(title: String, msg: String){
