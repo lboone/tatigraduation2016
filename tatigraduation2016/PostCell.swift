@@ -15,6 +15,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var showcaseImg: UIImageView!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var likeLbl: UILabel!
+    @IBOutlet weak var likeImg: UIImageView!
     
     var post: Post!
     var request: Request?
@@ -53,6 +54,18 @@ class PostCell: UITableViewCell {
         } else {
             self.showcaseImg.hidden = true
         }
+        
+        let likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+            
+        likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let doesNotExist = snapshot.value as? NSNull {
+                //This means we have not liked this specific post
+                self.likeImg.image = UIImage(named: "heart-empty")
+            } else {
+                self.likeImg.image = UIImage(named: "heart-full")
+            }
+        })
+        
     }
 
 }
