@@ -31,6 +31,10 @@ class Post {
         return _username
     }
     
+    var postKey: String {
+        return _postKey
+    }
+    
     init(desc: String, imageUrl: String?, username: String){
         self._postDescription = desc
         self._imageUrl = imageUrl

@@ -15,6 +15,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postField: MaterialTextField!
     @IBOutlet weak var imageSelectorImage: UIImageView!
+    @IBOutlet weak var postingView: UIView!
+    
+    @IBOutlet weak var dialogBkgView: UIView!
+    
     
     var posts = [Post]()
     
@@ -44,9 +48,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
             self.tableView.reloadData()
         })
+        
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        
+        self.cameraDialogDisplay(true, hide: true)
+        self.postingDialogDisplay(true, hide: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -112,9 +118,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        //print(info)
-        //print(info[UIImagePickerControllerMediaType])
-        //print(info[UIImagePickerControllerOriginalImage])
         if let imgType = info[UIImagePickerControllerMediaType] as? String {
             if imgType == "public.image" {
                 if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
@@ -128,15 +131,49 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
     }
     @IBAction func selectImage(sender: UITapGestureRecognizer) {
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-        
+        self.cameraDialogDisplay(true, hide: false)
+    }
+    
+    func noCamera(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .Alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.Default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        presentViewController(alertVC,
+            animated: true,
+            completion: nil)
+    }
+    
+    @IBAction func selectImageCameraPressed(sender: UIButton) {
+        cameraDialogDisplay(true, hide: true)
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePicker.cameraCaptureMode = .Photo
+            presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            noCamera()
+        }
+    }
+    
+    @IBAction func selectImaeLibraryPressed(sender: UIButton) {
+        cameraDialogDisplay(true, hide: true)
+        if UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary) != nil {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            noCamera()
+        }
     }
     
     @IBAction func makePost(sender: MaterialButton) {
      
         if let txt = postField.text where txt != "" {
-            
+            postingDialogDisplay(true, hide: false)
             if let img = imageSelectorImage.image where imageChanged == true {
                 let urlStr = "https://post.imageshack.us/upload_api.php"
                 let url = NSURL(string: urlStr)!
@@ -170,6 +207,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                                 }
                             })
                         case .Failure(let error):
+                            self.postingDialogDisplay(true, hide: true)
                             self.showErrorAlert("Error!", msg: "\(error)")
                     }
                 }
@@ -178,6 +216,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 self.postToFirebase(nil)
             }
         } else {
+            postingDialogDisplay(true, hide: true)
             showErrorAlert("Message required!", msg: "Please provide a message before you post!")
         }
         
@@ -196,6 +235,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         postField.text = ""
         imageSelectorImage.image = UIImage(named: "camera")
         imageChanged = false
+        postingDialogDisplay(true, hide: true)
         tableView.reloadData()
     }
 
@@ -204,5 +244,61 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
+    func cameraDialogDisplay(animated: Bool, hide: Bool) {
+        var dlgRect: CGRect
+        var dlgAlpha: CGFloat
+        let dlgHide = hide
+        
+        if hide == true {
+            dlgRect = CGRectMake(0,-1800, view.frame.width, view.frame.height)
+            dlgAlpha = 0.0
+        } else {
+            dlgRect = CGRectMake(0, 0, view.frame.width, view.frame.height)
+            dlgAlpha = 1.0
+        }
+        
+        if animated == true {
+            UIView.animateWithDuration(0.50) {
+                self.dialogBkgView.alpha = dlgAlpha
+                self.dialogBkgView.hidden = dlgHide
+                self.dialogBkgView.frame = dlgRect
+                self.dialogBkgView.setNeedsDisplay()
+            }
+        } else {
+            dialogBkgView.alpha = dlgAlpha
+            dialogBkgView.hidden = dlgHide
+            dialogBkgView.frame = dlgRect
+            self.dialogBkgView.setNeedsDisplay()
+        }
+
+    }
+    
+    func postingDialogDisplay(animated: Bool, hide: Bool){
+        var dlgRect: CGRect
+        var dlgAlpha: CGFloat
+        let dlgHide = hide
+        
+        if hide == true {
+            dlgRect = CGRectMake(0, -63, self.view.layer.frame.width, self.postingView.layer.frame.height)
+            dlgAlpha = 0.0
+        } else {
+            dlgRect = CGRectMake(0, -0, self.view.layer.frame.width, self.postingView.layer.frame.height)
+            dlgAlpha = 1.0
+        }
+        
+        if animated == true {
+            UIView.animateWithDuration(0.50) {
+                self.postingView.alpha = dlgAlpha
+                self.postingView.hidden = dlgHide
+                self.postingView.frame = dlgRect
+            }
+        } else {
+            postingView.alpha = dlgAlpha
+            postingView.hidden = dlgHide
+            postingView.frame = dlgRect
+        }
     }
 }
