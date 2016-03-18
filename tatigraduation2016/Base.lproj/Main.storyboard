@@ -434,6 +434,9 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="LxU-1U-6he"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-hE-FpA">
                                                                     <rect key="frame" x="0.0" y="60" width="544" height="70"/>
