@@ -10,7 +10,6 @@
 		124CD2791C970A6200665437 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD2781C970A6200665437 /* FeedVC.swift */; };
 		124CD27B1C970AF600665437 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD27A1C970AF600665437 /* PostCell.swift */; };
 		124CD27D1C9759DA00665437 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD27C1C9759DA00665437 /* Post.swift */; };
-		124CD27F1C989B4400665437 /* SavingPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CD27E1C989B4400665437 /* SavingPostVC.swift */; };
 		126C06861C93D741004DF044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C06851C93D741004DF044 /* AppDelegate.swift */; };
 		126C06881C93D741004DF044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C06871C93D741004DF044 /* ViewController.swift */; };
 		126C068B1C93D741004DF044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126C06891C93D741004DF044 /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 		124CD2781C970A6200665437 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		124CD27A1C970AF600665437 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		124CD27C1C9759DA00665437 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		124CD27E1C989B4400665437 /* SavingPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingPostVC.swift; sourceTree = "<group>"; };
 		126C06821C93D741004DF044 /* tatigraduation2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tatigraduation2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126C06851C93D741004DF044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		126C06871C93D741004DF044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			children = (
 				126C06871C93D741004DF044 /* ViewController.swift */,
 				124CD2781C970A6200665437 /* FeedVC.swift */,
-				124CD27E1C989B4400665437 /* SavingPostVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 				124CD27B1C970AF600665437 /* PostCell.swift in Sources */,
 				126C06861C93D741004DF044 /* AppDelegate.swift in Sources */,
 				128082641C93E46900A5A36C /* Constants.swift in Sources */,
-				124CD27F1C989B4400665437 /* SavingPostVC.swift in Sources */,
 				128082661C94BCEF00A5A36C /* MaterialButton.swift in Sources */,
 				124CD27D1C9759DA00665437 /* Post.swift in Sources */,
 			);

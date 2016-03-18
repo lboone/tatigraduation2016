@@ -81,24 +81,31 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             var img: UIImage?
             
             if let url = post.imageUrl {
+                img = FeedVC.imageCache.objectForKey(url) as? UIImage
+            }
+            /*
+            if let url = post.imageUrl {
                 print("Row: \(indexPath.row)")
                 print(post.imageUrl)
                 print(post.postDescription)
                 print("Has Image")
                 
                 img = FeedVC.imageCache.objectForKey(url) as? UIImage
+                
                 if img != nil {
                     print("Image found in cache")
                     
                 } else {
                     print("Image NOT found in cache")
                 }
+                
             } else {
                 print("Row: \(indexPath.row)")
                 print(post.imageUrl)
                 print(post.postDescription)
                 print("No Image")
             }
+            */
             cell.configureCell(post,img: img)
             return cell
         } else {
@@ -124,9 +131,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     imageSelectorImage.image = img
                     imageChanged = true
                 }
-            } else {
+            } /*else {
                 print("Not an image")
-            }
+            }*/
         }
         
     }
@@ -200,7 +207,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                                 if let info = result.result.value as? Dictionary<String, AnyObject> {
                                     if let links = info["links"] as? Dictionary<String, AnyObject> {
                                         if let imgLink = links["image_link"] as? String {
-                                            print("LINK: \(imgLink)")
+                                            //print("LINK: \(imgLink)")
                                             self.postToFirebase(imgLink)
                                         }
                                     }

@@ -46,10 +46,11 @@ class PostCell: UITableViewCell {
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         
         if post.imageUrl != nil {
+            self.showcaseImg.hidden = false
             if img != nil {
                 self.showcaseImg.image = img
             } else {
-                print("Configure Cell: img == nil")
+                //print("Configure Cell: img == nil")
                 request = Alamofire.request(.GET, post.imageUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
                     if err == nil {
                         if let img = UIImage(data: data!){

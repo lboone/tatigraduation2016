@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         let kID = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)
         if kID != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-        } else {
+        }/* else {
             print(NSUserDefaults.standardUserDefaults())
-        }
+        }*/
     }
 
     @IBAction func fbBtnPressed(sender: UIButton!) {
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
             showErrorAlert("Email and Password Required", msg: "You must provide a username and password.")
         }
         
-        print(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID))
+        //print(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID))
     }
     
     func showErrorAlert(title: String, msg: String){
